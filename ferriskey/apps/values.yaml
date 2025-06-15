@@ -1,13 +1,9 @@
 ferriskey:
   front:
-    image:
-      tag: 0.1.0-rc3
     apiUrl: "https://api.dev.ferriskey.bonnal.cloud"
   api:
     database:
       existingSecret: ferriskey-db-app
-    image:
-      tag: 0.1.0-rc3
   ingress:
     apiHost: "api.dev.ferriskey.bonnal.cloud"
     frontHost: "console.dev.ferriskey.bonnal.cloud"

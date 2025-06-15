@@ -12,5 +12,5 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: ferriskey
-    version: 0.1.0-rc3
+    version: 0.1.0-rc5
     repository: "oci://ghcr.io/ferriskey/charts"
