@@ -1,0 +1,15 @@
+ferriskey:
+  front:
+    image:
+      tag: 0.1.0-rc3
+    apiUrl: "https://api.dev.ferriskey.bonnal.cloud"
+  api:
+    database:
+      existingSecret: ferriskey-db-app
+    image:
+      tag: 0.1.0-rc3
+  ingress:
+    apiHost: "api.dev.ferriskey.bonnal.cloud"
+    frontHost: "console.dev.ferriskey.bonnal.cloud"
+
+  allowedOrigins: "https://console.dev.ferriskey.bonnal.cloud,http://localhost:3000,http://localhost:5555,http://localhost:5173,http://localhost:8080,http://localhost:8000,https://ferriskey.fr,https://ferriskey.dev,https://ferriskey.io,https://ferriskey.app"

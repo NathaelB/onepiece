@@ -1,0 +1,6 @@
+dependencies:
+- name: ferriskey
+  repository: oci://ghcr.io/ferriskey/charts
+  version: 0.1.0-rc3
+digest: sha256:c7d5a1bbd660411b107aaf721eb1f613d2f1719d6fd624ca49d44bd0551a26dc
+generated: "2025-06-15T23:54:41.883436+02:00"

@@ -1,0 +1,33 @@
+kube-prometheus-stack:
+  grafana:
+    enabled: true
+
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: nginx
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
+      hosts:
+        - grafana.ferriskey.bonnal.cloud
+      tls:
+        - secretName: grafana-tls
+          hosts:
+            - grafana.ferriskey.bonnal.cloud
+    grafana.ini:
+      server:
+        root_url: https://grafana.ferriskey.bonnal.cloud
+      auth:
+        disable_login_form: true
+      auth.github:
+        role_attribute_path: >-
+          contains(groups[*], '@ferriskey/grafana-admins') && 'Admin' || 'Viewer'
+        enabled: true
+        allow_sign_up: true
+        client_id: ${GITHUB_CLIENT_ID}
+        client_secret: ${GITHUB_CLIENT_SECRET}
+        scopes: user:email,read:org
+        auth_url: https://github.com/login/oauth/authorize
+        token_url: https://github.com/login/oauth/access_token
+        api_url: https://api.github.com/user
+        allowed_organizations: ["ferriskey"]
+    envFromSecret: grafana-oauth-secret
